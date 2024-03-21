@@ -66,7 +66,7 @@ const Menu = ({ showLogo = true, className }: { showLogo?: boolean; className?: 
 
     return (
         <>
-            <div className={`flex items-center justify-around ${className}`}>
+            <div className={`flex items-center justify-around h-24 ${className}`}>
                 {showLogo ? (
                     <Logo />
                 ) : (
@@ -84,7 +84,7 @@ const Menu = ({ showLogo = true, className }: { showLogo?: boolean; className?: 
                                 <DropdownMenuContent className="py-2">
                                     {menuNavigate.map((item, index) => {
                                         return (
-                                            <a key={index} className="block px-4 py-2 text-gray-800 hover:bg-gray-200">{item.name}</a>
+                                            <a key={index} className="block px-4 py-2 text-sm font-bold text-gray-800 hover:bg-gray-200 ">{item.name}</a>
                                         );
                                     })}
                                 </DropdownMenuContent>
@@ -96,7 +96,7 @@ const Menu = ({ showLogo = true, className }: { showLogo?: boolean; className?: 
                     <Menubar className='border-none'>
                         {menuNavigate.map((item, index) => {
                             return (
-                                <a href={item.href} key={index} className="block px-4 py-2 text-gray-800 hover:bg-gray-200">{item.name}</a>
+                                <a href={item.href} key={index} className="block px-4 py-2 text-sm font-bold text-gray-800 hover:text-orange-600">{item.name}</a>
                             );
                         })}
                     </Menubar>

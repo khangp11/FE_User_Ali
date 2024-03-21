@@ -9,7 +9,6 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 
-import { icons } from 'lucide-react'
 
 
 const product = () => {

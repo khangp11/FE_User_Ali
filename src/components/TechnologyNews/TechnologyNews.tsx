@@ -42,7 +42,10 @@ const TechnologyNews = () => {
 
     return (
         <>
-            <Label className='flex items justify-center font-bold text-2xl' text={TechnologyNewsTitle.name} />
+            <div>
+                <Label className='flex items justify-center font-bold text-2xl mt-2' text={TechnologyNewsTitle.name} />
+                <hr style={{ width: '6%', margin: 'auto', borderBottom: '3px solid orange', marginTop: '12px' }} />
+            </div>
 
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 mt-10' style={{ padding: '0 10%' }}>
                 {news.map((item, index) => (

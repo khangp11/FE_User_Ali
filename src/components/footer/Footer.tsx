@@ -2,6 +2,9 @@
 import React, { useEffect, useState } from 'react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { BsFacebook } from "react-icons/bs";
+import { BsTwitterX } from "react-icons/bs";
+
 import Menu from '../header/Menu';
 import {
     Menubar,
@@ -115,7 +118,7 @@ const Footer = () => {
     }
 
     return (
-        <footer className='bg-neutral-900 mt-5'>
+        <footer className='bg-neutral-900 mt-10'>
             {isMobileView && (
                 <div className='justify-center' style={{ padding: '0 10%' }} >
                     <div className='flex items-center mt-5'>
@@ -243,15 +246,12 @@ const Footer = () => {
                             })}
                         </div>
                         <br />
-                        <div className='flex items-center justify-center'>
+                        <div className='flex items-center justify-center '>
                             <a href={company.facebook} target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 30 30">
-                                    <path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M19.181,11h-1.729 C16.376,11,16,11.568,16,12.718V14h3.154l-0.428,3H16v7.95C15.671,24.982,15.338,25,15,25c-0.685,0-1.354-0.07-2-0.201V17h-3v-3h3 v-1.611C13,9.339,14.486,8,17.021,8c1.214,0,1.856,0.09,2.16,0.131V11z"></path>
-                                </svg>
+                                <BsFacebook className='w-6 h-6 text-blue-600' />
                             </a>
-                            <a href={company.twitter} target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 30 30">
-                                <path d="M 6 4 C 4.895 4 4 4.895 4 6 L 4 24 C 4 25.105 4.895 26 6 26 L 24 26 C 25.105 26 26 25.105 26 24 L 26 6 C 26 4.895 25.105 4 24 4 L 6 4 z M 8.6484375 9 L 13.259766 9 L 15.951172 12.847656 L 19.28125 9 L 20.732422 9 L 16.603516 13.78125 L 21.654297 21 L 17.042969 21 L 14.056641 16.730469 L 10.369141 21 L 8.8945312 21 L 13.400391 15.794922 L 8.6484375 9 z M 10.878906 10.183594 L 17.632812 19.810547 L 19.421875 19.810547 L 12.666016 10.183594 L 10.878906 10.183594 z"></path>
-                            </svg>
+                            <a className='ml-3' href={company.twitter} target="_blank">
+                                <BsTwitterX className='w-6 h-6 text-white' />
                             </a>
                         </div>
                     </div>
@@ -265,7 +265,7 @@ const Footer = () => {
                         })}
                     </div>
                     <div >
-                        <h2 className='text-gray-500 flex justify-center'>Đăng ký nhận thông tin sản phẩm và dịch vụ.</h2>
+                        <h2 className='text-gray-500 flex items justify-center'>Đăng ký nhận thông tin sản phẩm và dịch vụ.</h2>
                         <div className="flex items-center justify-center w-full">
                             <div className="max-w-sm space-x-2 flex items-center">
                                 <Input className="bg-slate-600 border-slate-600 hover:border-slate-600" type="email" placeholder="Email" />
@@ -275,7 +275,7 @@ const Footer = () => {
                     </div>
                 </div>
             )}
-            {(
+            {!isMobileView && !isExtraSmallView && (
                 <div className='flex items justify-evenly'>
                     <div>
                         <div className='flex'>
@@ -289,15 +289,12 @@ const Footer = () => {
                             })}
                         </div>
                         <br />
-                        <div className='flex items-center justify-center'>
+                        <div className='flex items-center justify-center '>
                             <a href={company.facebook} target="_blank">
-                                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 30 30">
-                                    <path d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M19.181,11h-1.729 C16.376,11,16,11.568,16,12.718V14h3.154l-0.428,3H16v7.95C15.671,24.982,15.338,25,15,25c-0.685,0-1.354-0.07-2-0.201V17h-3v-3h3 v-1.611C13,9.339,14.486,8,17.021,8c1.214,0,1.856,0.09,2.16,0.131V11z"></path>
-                                </svg>
+                                <BsFacebook className='w-6 h-6 text-blue-600' />
                             </a>
-                            <a href={company.twitter} target="_blank"> <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="50" height="50" viewBox="0 0 30 30">
-                                <path d="M 6 4 C 4.895 4 4 4.895 4 6 L 4 24 C 4 25.105 4.895 26 6 26 L 24 26 C 25.105 26 26 25.105 26 24 L 26 6 C 26 4.895 25.105 4 24 4 L 6 4 z M 8.6484375 9 L 13.259766 9 L 15.951172 12.847656 L 19.28125 9 L 20.732422 9 L 16.603516 13.78125 L 21.654297 21 L 17.042969 21 L 14.056641 16.730469 L 10.369141 21 L 8.8945312 21 L 13.400391 15.794922 L 8.6484375 9 z M 10.878906 10.183594 L 17.632812 19.810547 L 19.421875 19.810547 L 12.666016 10.183594 L 10.878906 10.183594 z"></path>
-                            </svg>
+                            <a className='ml-3' href={company.twitter} target="_blank">
+                                <BsTwitterX className='w-6 h-6 text-white' />
                             </a>
                         </div>
                     </div>
@@ -319,6 +316,47 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+            )}
+            {isExtraSmallView && (
+                <div className="counter-area pb-100 pt-100 relative">
+                    <div className="container mx-auto px-4">
+                        <div className="row">
+                            <div>
+                                {optionsService.map((item, index) => (
+                                    <React.Fragment key={index}>
+                                        <a className='text-gray-500'>{item.name}</a>
+                                        {index !== optionsService.length - 1 && <span className='mx-1 text-gray-500'> - </span>}
+                                        <br />
+                                    </React.Fragment>
+                                ))}
+                            </div>
+                            <div>
+                                <a href={company.facebook} target="_blank">
+                                    <BsFacebook className='w-6 h-6 text-blue-600' />
+                                </a>
+                                <a className='ml-3' href={company.twitter} target="_blank">
+                                    <BsTwitterX className='w-6 h-6 text-white' />
+                                </a>
+                            </div>
+                            <div>
+                                {options.map((item, index) => (
+                                    <div key={index} className='flex items-center'>
+                                        <a className='text-gray-400'>{item.name}</a>
+                                    </div>
+                                ))}
+                            </div>
+                            <div>
+                                <h2 className='text-gray-500'>Đăng ký nhận thông tin sản phẩm và dịch vụ.</h2>
+                                <br />
+                                <div className="flex w-full max-w-sm items-center space-x-2">
+                                    <Input className="bg-slate-600 border-slate-600 hover:border-slate-600" type="email" placeholder="Email" />
+                                    <Button className='bg-slate-400' type="submit">Submit</Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             )}
 
 
